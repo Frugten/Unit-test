@@ -22,10 +22,10 @@ namespace FootballPlayer.Tests
         [TestMethod]
         public void TestConstructor()
         {
-            FootballPlayer FootballPlayer = new FootballPlayer(1, "Ronal-done", 24000, 90);
+            FootballPlayer FootballPlayer = new FootballPlayer(1, "Ronal-done", 240, 90);
             Assert.AreEqual(1, FootballPlayer.Id);
             Assert.AreEqual("Ronal-done", FootballPlayer.Name);
-            Assert.AreEqual(24000, FootballPlayer.Price);
+            Assert.AreEqual(240, FootballPlayer.Price);
             Assert.AreEqual(90, FootballPlayer.ShirtNumber);
         }
         [TestMethod]
@@ -41,7 +41,7 @@ namespace FootballPlayer.Tests
         {
             _footballPlayer.Price = 200;
             Assert.AreEqual(200, _footballPlayer.Price);
-            //Assert.ThrowsException<ArgumentNullException>(() => _footballPlayer.Price = null);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _footballPlayer.ShirtNumber = -10);
         }
         [TestMethod]
         public void TestFootballPlayerShirtNumber()
@@ -49,7 +49,7 @@ namespace FootballPlayer.Tests
             _footballPlayer.ShirtNumber = 3;
             Assert.AreEqual(3, _footballPlayer.ShirtNumber);
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => _footballPlayer.ShirtNumber = 0);
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _footballPlayer.ShirtNumber = 20);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _footballPlayer.ShirtNumber = 200);
         }
     }
 }

@@ -18,7 +18,13 @@ namespace FootballPlayer
 
         }
 
-        public int Id { get; set; }
+        public int Id { get => _id; 
+            set
+            {
+                if (value < 0) throw new ArgumentOutOfRangeException("id", "Id have to bigger than 0");
+                _id = value;
+            }
+        }
 
         public string Name {
             get => _name;
@@ -33,7 +39,8 @@ namespace FootballPlayer
             get => _price;
             set
             {
-                if (value >= 0) throw new ArgumentOutOfRangeException("Price have to bigger than 0");
+                if (value < 0) throw new ArgumentOutOfRangeException("price","Price have to bigger than 0");
+                _price = value;
             }
         }
         public int ShirtNumber {
@@ -42,6 +49,7 @@ namespace FootballPlayer
             {
                 if (value >= 1 && value <= 100) _shirtNumber = value;
                 else throw new ArgumentOutOfRangeException("shirtnumber", value, "Name cannot be null");
+                _shirtNumber = value;
             }
         }
     }
