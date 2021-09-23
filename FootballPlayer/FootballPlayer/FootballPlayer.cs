@@ -39,7 +39,7 @@ namespace FootballPlayer
             set
             {
                 if (value >= 1 && value <= 100) _shirtNumber = value;
-                else throw new ArgumentOutOfRangeException("semester", value, "Name cannot be null");
+                else throw new ArgumentOutOfRangeException("shirtnumber", value, "Name cannot be null");
             }
         }
     }
