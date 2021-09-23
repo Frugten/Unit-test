@@ -11,12 +11,14 @@ namespace FootballPlayer
 
         public FootballPlayer(int id, string name, int price, int shirtNumber)
         {
-            _id = id;
-            _name = name;
-            _price = price;
-            _shirtNumber = shirtNumber;
+            Id = id;
+            Name = name;
+            Price = price;
+            ShirtNumber = shirtNumber;
 
         }
+
+        public int Id { get; set; }
 
         public string Name {
             get => _name;
